@@ -1,0 +1,5 @@
+main: fr.elusia.chatevent.ChatEventPlugin
+name: ChatEvent
+author: Traqueur_
+version: 1.0
+depend: [Vault]
