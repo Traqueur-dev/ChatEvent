@@ -106,6 +106,7 @@ public class ChatEventCommand {
 		
 		player.sendMessage(Utils.LINE
 				+ "§eListe des §ccommandes§e:\n"
+				+ "§l§c• §e/words start\n"
 				+ "§l§c• §e/words list §a<difficulty|all>\n"
 				+ "§l§c• §e/words add §a<difficulty> <word>\n"
 				+ "§l§c• §e/words remove §a<difficulty> <word>\n"
