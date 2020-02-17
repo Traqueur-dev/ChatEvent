@@ -114,7 +114,7 @@ public class ChatEventCommand {
 		return;
 	}
 	
-	@Command(name = "words.help", aliases = { "word.help" }, permission = "words.help", 
+	@Command(name = "words.start", aliases = { "word.start" }, permission = "words.start", 
 			description = "Voir la liste des commandes", usage = "/words help", inGameOnly = false)
 	public void onStartWord(CommandArgs args) {
 		CommandSender player = args.getSender();
