@@ -5,6 +5,7 @@ import java.util.List;
 import org.bukkit.command.CommandSender;
 
 import fr.elusia.chatevent.ChatEventPlugin;
+import fr.elusia.chatevent.ChatEventTask;
 import fr.elusia.chatevent.api.utils.Utils;
 import fr.elusia.chatevent.api.utils.commands.CommandArgs;
 import fr.elusia.chatevent.api.utils.commands.annontations.Command;
@@ -110,6 +111,15 @@ public class ChatEventCommand {
 				+ "§l§c• §e/words remove §a<difficulty> <word>\n"
 				+ Utils.LINE);
 		
+		return;
+	}
+	
+	@Command(name = "words.help", aliases = { "word.help" }, permission = "words.help", 
+			description = "Voir la liste des commandes", usage = "/words help", inGameOnly = false)
+	public void onStartWord(CommandArgs args) {
+		CommandSender player = args.getSender();
+		ChatEventTask.start();
+		player.sendMessage("§eVous venez de lancer l'évènement manuellement.");
 		return;
 	}
 	

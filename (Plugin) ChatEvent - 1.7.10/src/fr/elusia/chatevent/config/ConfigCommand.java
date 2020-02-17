@@ -89,5 +89,19 @@ public class ConfigCommand {
 		return;
 	}
 	
+	@Command(name = "config.help", aliases = { "conf.help", "configuration.help" }, permission = "config.help", 
+			description = "Voir la liste des commandes de configuration.", usage = "/configuration help", inGameOnly = false)
+	public void onConfigHelp(CommandArgs args) {
+		CommandSender player = args.getSender();
+
+		player.sendMessage(Utils.LINE
+				+ "§eListe des §ccommandes§e:\n"
+				+ "§l§c• §e/config\n"
+				+ "§l§c• §e/config setreward §a<difficulty> <amount>\n"
+				+ "§l§c• §e/config setdelay §a<delay>\n"
+				+ Utils.LINE);
+		return;
+	}
+	
 	
 }

@@ -14,14 +14,14 @@ import lombok.Setter;
 
 public class ChatEventTask implements Runnable {
 
-	private ChatEventManager manager = ChatEventPlugin.getInstance().getChatManager();
+	private static ChatEventManager manager = ChatEventPlugin.getInstance().getChatManager();
 	private static @Getter @Setter boolean wordIsSend = false;
 	private static @Getter @Setter String word = null;
 	private static @Getter @Setter long time = 0l;
 	private static @Getter @Setter Difficulty diffOfWord = null;
 	
-	@Override
-	public void run() {
+	
+	public static void start() {
 		Difficulty difficulties[] = Difficulty.values();
 		int rand = new Random().nextInt(difficulties.length);
 		Difficulty difficulty = difficulties[rand];
@@ -44,6 +44,12 @@ public class ChatEventTask implements Runnable {
 		ChatEventTask.wordIsSend = true;
 		ChatEventTask.time = System.currentTimeMillis();
 		ChatEventTask.diffOfWord = difficulty;
+		return;
+	}
+	
+	@Override
+	public void run() {
+		start();
 	}
 
 }
